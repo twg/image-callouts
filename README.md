@@ -17,4 +17,4 @@ The following lines produce the image shown below:
 * \[//\]\: # ({"file": "twg_example.png", "x": "100", "y": "100", "text": "1"})
 * \[//\]\: # ({"file": "twg_example.png", "text": "Figure 1 - TWG"})
 
-[[img/twg_example.png]]
+![](http://img/twg_example.png)
