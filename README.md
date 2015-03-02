@@ -31,3 +31,10 @@ The following comments produce the generated image shown below:
 [//]: # ({"file": "twg_example.png", "x": "100", "y": "140", "text": "3"})
 [//]: # ({"file": "twg_example.png", "x": "80", "y": "120", "text": "4"})
 [//]: # ({"file": "twg_example.png", "text": "Figure 1 - TWG Generated Image"})
+
+## Copyright
+
+(C) 2015 David Connolly, The Working Group Inc. and other contributors.
+
+Using the [MIT License](http://opensource.org/licenses/MIT) as described in
+the [`LICENSE`](LICENSE) file.
