@@ -14,7 +14,7 @@ Two types of callouts are supported and can be added inline in your Markdown (.m
 
 ### Example
 Using this source image:
-
+![](https://github.com/twg/image-callouts/blob/master/source_img/twg_example.png)
 
 The following comments produce the generated image shown below:
 * \[//\]\: # ({"file": "twg_example.png", "x": "100", "y": "100", "text": "1"})
