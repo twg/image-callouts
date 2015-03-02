@@ -2,9 +2,11 @@
 A simple gulp app that lets you easily add callouts to your wiki images.
 
 ## Installation
-1. `git clone && cd`
+1. `git clone https://github.com/twg/image-callouts.git && cd image-callouts`
 1. `npm install`
 2. `gulp`
+
+This code could easily be adapted to work with an existing wiki by modifying the folder locations in the gulpfile.  If you're building a wiki from scratch, you can use this repo as the foundation for it.
 
 ## Usage
 
