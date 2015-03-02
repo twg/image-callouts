@@ -3,7 +3,7 @@ A simple gulp app that lets you easily add callouts to your wiki images.
 
 \[//\]\: # ({"file": "<filename.png>", "x": "xPos", "y": "yPos", "text": "Number (1-9)"})
 
-\[//\]\: # ({"file": "<filename.png>", "text": "<Image Title>"})
+\[//\]\: # ({"file": "<filename.png>", "text": "\<Image Title\>"})
 
 * filename is the full name of the file relative to ./img/
 * If text is a number, it is placed at the given x/y POS (top left is 0,0)
