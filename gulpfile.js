@@ -5,6 +5,12 @@ var numberColor = 'white';
 var numberSize  = 20;
 var labelSize   = 20;
 
+// Sources
+markdown_matcher        = "./*.md"
+source_image_folder     = "./source_img/"
+source_image_type       = "*.png"
+desination_image_folder = "./img/"
+
 // Comment Matching Regex
 var comments  = /\[\/\/\]: # \((.*)\)/g;
 var open_tag  = /\[\/\/\]: # \(/;
@@ -17,14 +23,15 @@ var gm          = require('gm');
 var async       = require('async');
 var runSequence = require('run-sequence');
 
+
 // Sub-Tasks
 gulp.task('copyImages', function() {
-  return gulp.src('./source_img/*.png')
-    .pipe(gulp.dest('./img'))
+  return gulp.src(source_image_folder + source_image_type)
+    .pipe(gulp.dest(desination_image_folder))
 })
 
 gulp.task('processImages', function() {
-  return gulp.src('./*.md')
+  return gulp.src(markdown_matcher)
     .pipe(gutil.buffer(function(err, files){
       var workers = [];
       var image = null;
@@ -60,13 +67,13 @@ gulp.task('processImages', function() {
 // Helpers
 var addNumber = function(workers, tag, callback){
   workers.push(function(callback){
-    gm('./img/' + tag.file)
+    gm(desination_image_folder + tag.file)
       .fill(cirlceColor)
       .drawCircle(tag.x, tag.y, tag.x + radius, tag.y + radius)
       .fill(numberColor)
       .fontSize(numberSize)
       .drawText(tag.x - numberSize / 4, tag.y + numberSize / 4, tag.text)
-      .write('./img/' + tag.file, function(err) {
+      .write(desination_image_folder + tag.file, function(err) {
         if (err)
           console.log(err);
         else
@@ -77,12 +84,12 @@ var addNumber = function(workers, tag, callback){
 
 var addText = function(workers, tag, callback){
   workers.push(function(callback){
-    gm('./img/' + tag.file)
+    gm(desination_image_folder + tag.file)
       .gravity("South")
       .fill("black")
       .fontSize(labelSize)
       .drawText(0, labelSize / 2, tag.text)
-      .write('./img/' + tag.file, function(err) {
+      .write(desination_image_folder + tag.file, function(err) {
         if (err)
           console.log(err);
         else
@@ -94,7 +101,7 @@ var addText = function(workers, tag, callback){
 // TASKS //////////////////////////////////////////////////////////////////////
 
 gulp.task('watch', function() {
-  gulp.watch('./*.md', function() {
+  gulp.watch(markdown_matcher, function() {
     runSequence('copyImages', 'processImages')
   });
 });
