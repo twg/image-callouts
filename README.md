@@ -14,6 +14,8 @@ Two types of callouts are supported and can be added inline in your Markdown (.m
  * Numbers: \[//\]\: # ({"file": "\<filename.png\>", "x": "xPos", "y": "yPos", "text": "Number (1-9)"}) 
  * Image Title: \[//\]\: # ({"file": "\<filename.png\>", "text": "\<Image Title\>"})
 
+Every time you add a callout, you'll need to run `gulp` again to re-generate your images. 
+ 
 ### Example
 Using this source image:
 ![](https://github.com/twg/image-callouts/blob/master/source_img/twg_example.png)
